@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_landingservices",
+  "info": {
+    "displayName": "landingservice"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

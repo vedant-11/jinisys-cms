@@ -1,5 +1,43 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedHomeServices extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_services';
+  info: {
+    displayName: 'HomeServices';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    body: Schema.Attribute.String;
+    services: Schema.Attribute.Component<'shared.services', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLandingService extends Struct.ComponentSchema {
+  collectionName: 'components_shared_landing_services';
+  info: {
+    displayName: 'landing-service';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLandingservice extends Struct.ComponentSchema {
+  collectionName: 'components_shared_landingservices';
+  info: {
+    displayName: 'landingservice';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +46,34 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMilestoneCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_milestone_cards';
+  info: {
+    displayName: 'milestone_card';
+  };
+  attributes: {
+    milestone_body: Schema.Attribute.String;
+    milestone_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    milestone_number: Schema.Attribute.String;
+    milestone_pic: Schema.Attribute.String;
+    milestone_suffix: Schema.Attribute.String;
+    milestone_title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedNavbarlinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_navbarlinks';
+  info: {
+    displayName: 'navbarlinks';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -50,6 +116,19 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedServices extends Struct.ComponentSchema {
+  collectionName: 'components_shared_services';
+  info: {
+    displayName: 'services';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -65,10 +144,16 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.home-services': SharedHomeServices;
+      'shared.landing-service': SharedLandingService;
+      'shared.landingservice': SharedLandingservice;
       'shared.media': SharedMedia;
+      'shared.milestone-card': SharedMilestoneCard;
+      'shared.navbarlinks': SharedNavbarlinks;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.services': SharedServices;
       'shared.slider': SharedSlider;
     }
   }

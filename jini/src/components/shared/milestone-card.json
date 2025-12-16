@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_milestone_cards",
+  "info": {
+    "displayName": "milestone_card"
+  },
+  "options": {},
+  "attributes": {
+    "milestone_icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "milestone_number": {
+      "type": "string"
+    },
+    "milestone_title": {
+      "type": "string"
+    },
+    "milestone_body": {
+      "type": "string"
+    },
+    "milestone_suffix": {
+      "type": "string"
+    },
+    "milestone_pic": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

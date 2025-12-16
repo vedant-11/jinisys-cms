@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_services",
+  "info": {
+    "singularName": "home-service",
+    "pluralName": "home-services",
+    "displayName": "HomeService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "homeservice": {
+      "type": "component",
+      "component": "shared.home-services",
+      "repeatable": false
+    }
+  }
+}

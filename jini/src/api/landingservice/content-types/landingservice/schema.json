@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "landingservices",
+  "info": {
+    "singularName": "landingservice",
+    "pluralName": "landingservices",
+    "displayName": "landingservice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "landingservice": {
+      "type": "component",
+      "component": "shared.landingservice",
+      "repeatable": true
+    }
+  }
+}
