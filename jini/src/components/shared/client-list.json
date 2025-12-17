@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_client_lists",
+  "info": {
+    "displayName": "clientList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

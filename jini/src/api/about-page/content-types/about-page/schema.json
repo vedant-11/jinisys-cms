@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "AboutPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "advantageBanner": {
+      "type": "string"
+    },
+    "advantageTitle": {
+      "type": "string"
+    },
+    "advantageDescription": {
+      "type": "string"
+    },
+    "adantageCardTitle": {
+      "type": "string"
+    },
+    "advantage": {
+      "type": "component",
+      "component": "shared.advantage",
+      "repeatable": true
+    },
+    "informationBadge": {
+      "type": "string"
+    },
+    "informationTitle": {
+      "type": "string"
+    },
+    "informationDescription": {
+      "type": "string"
+    },
+    "valuesBadge": {
+      "type": "string"
+    },
+    "valuesTitle": {
+      "type": "string"
+    },
+    "valuesCard": {
+      "type": "component",
+      "component": "shared.values-card",
+      "repeatable": true
+    }
+  }
+}

@@ -1,5 +1,47 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedActivities extends Struct.ComponentSchema {
+  collectionName: 'components_shared_activities';
+  info: {
+    displayName: 'activities';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedAdvantage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_advantages';
+  info: {
+    displayName: 'advantage';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedClientList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_client_lists';
+  info: {
+    displayName: 'clientList';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedClients extends Struct.ComponentSchema {
+  collectionName: 'components_shared_clients';
+  info: {
+    displayName: 'clients';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHomeServices extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_services';
   info: {
@@ -10,6 +52,16 @@ export interface SharedHomeServices extends Struct.ComponentSchema {
     body: Schema.Attribute.String;
     services: Schema.Attribute.Component<'shared.services', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedIndustry extends Struct.ComponentSchema {
+  collectionName: 'components_shared_industries';
+  info: {
+    displayName: 'industry';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
   };
 }
 
@@ -77,6 +129,20 @@ export interface SharedNavbarlinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPhase extends Struct.ComponentSchema {
+  collectionName: 'components_shared_phases';
+  info: {
+    displayName: 'phase';
+  };
+  attributes: {
+    activities: Schema.Attribute.Component<'shared.activities', true>;
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    number: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -141,20 +207,39 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedValuesCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_values_cards';
+  info: {
+    displayName: 'valuesCard';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.activities': SharedActivities;
+      'shared.advantage': SharedAdvantage;
+      'shared.client-list': SharedClientList;
+      'shared.clients': SharedClients;
       'shared.home-services': SharedHomeServices;
+      'shared.industry': SharedIndustry;
       'shared.landing-service': SharedLandingService;
       'shared.landingservice': SharedLandingservice;
       'shared.media': SharedMedia;
       'shared.milestone-card': SharedMilestoneCard;
       'shared.navbarlinks': SharedNavbarlinks;
+      'shared.phase': SharedPhase;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.services': SharedServices;
       'shared.slider': SharedSlider;
+      'shared.values-card': SharedValuesCard;
     }
   }
 }

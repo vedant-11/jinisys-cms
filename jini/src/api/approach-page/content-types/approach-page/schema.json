@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "approach_pages",
+  "info": {
+    "singularName": "approach-page",
+    "pluralName": "approach-pages",
+    "displayName": "ApproachPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "titleSummary": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "component",
+      "component": "shared.phase",
+      "repeatable": true
+    }
+  }
+}

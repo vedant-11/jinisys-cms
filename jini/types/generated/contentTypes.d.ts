@@ -467,6 +467,46 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    displayName: 'AboutPage';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adantageCardTitle: Schema.Attribute.String;
+    advantage: Schema.Attribute.Component<'shared.advantage', true>;
+    advantageBanner: Schema.Attribute.String;
+    advantageDescription: Schema.Attribute.String;
+    advantageTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Heading: Schema.Attribute.String;
+    informationBadge: Schema.Attribute.String;
+    informationDescription: Schema.Attribute.String;
+    informationTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subheading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valuesBadge: Schema.Attribute.String;
+    valuesCard: Schema.Attribute.Component<'shared.values-card', true>;
+    valuesTitle: Schema.Attribute.String;
+  };
+}
+
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
@@ -490,6 +530,41 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApproachPageApproachPage extends Struct.SingleTypeSchema {
+  collectionName: 'approach_pages';
+  info: {
+    displayName: 'ApproachPage';
+    pluralName: 'approach-pages';
+    singularName: 'approach-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::approach-page.approach-page'
+    > &
+      Schema.Attribute.Private;
+    phase: Schema.Attribute.Component<'shared.phase', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    subheading: Schema.Attribute.String;
+    summary: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    titleSummary: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -600,6 +675,95 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClientDataClientData extends Struct.SingleTypeSchema {
+  collectionName: 'client_datas';
+  info: {
+    displayName: 'ClientData';
+    pluralName: 'client-datas';
+    singularName: 'client-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clients: Schema.Attribute.Component<'shared.clients', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-data.client-data'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiClientPageClientPage extends Struct.SingleTypeSchema {
+  collectionName: 'client_pages';
+  info: {
+    displayName: 'ClientPage';
+    pluralName: 'client-pages';
+    singularName: 'client-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    industryBadge: Schema.Attribute.String;
+    industryTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-page.client-page'
+    > &
+      Schema.Attribute.Private;
+    portfolioBadge: Schema.Attribute.String;
+    portfolioTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subHeading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiClientClient extends Struct.SingleTypeSchema {
+  collectionName: 'clients';
+  info: {
+    displayName: 'client';
+    pluralName: 'clients';
+    singularName: 'client';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ClientList: Schema.Attribute.Component<'shared.client-list', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client.client'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -654,6 +818,69 @@ export interface ApiHomeServiceHomeService extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIndustryIndustry extends Struct.SingleTypeSchema {
+  collectionName: 'industries';
+  info: {
+    displayName: 'industry';
+    pluralName: 'industries';
+    singularName: 'industry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    industry: Schema.Attribute.Component<'shared.industry', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry.industry'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLandingheroLandinghero extends Struct.SingleTypeSchema {
+  collectionName: 'landingheroes';
+  info: {
+    displayName: 'landinghero';
+    pluralName: 'landingheroes';
+    singularName: 'landinghero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    business_stats_title: Schema.Attribute.String;
+    businessstat1: Schema.Attribute.String;
+    businessStat2: Schema.Attribute.String;
+    businessstat3: Schema.Attribute.String;
+    coloredTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landinghero.landinghero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1287,12 +1514,19 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::about.about': ApiAboutAbout;
+      'api::approach-page.approach-page': ApiApproachPageApproachPage;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::client-data.client-data': ApiClientDataClientData;
+      'api::client-page.client-page': ApiClientPageClientPage;
+      'api::client.client': ApiClientClient;
       'api::global.global': ApiGlobalGlobal;
       'api::home-service.home-service': ApiHomeServiceHomeService;
+      'api::industry.industry': ApiIndustryIndustry;
+      'api::landinghero.landinghero': ApiLandingheroLandinghero;
       'api::landingservice.landingservice': ApiLandingserviceLandingservice;
       'api::milestone.milestone': ApiMilestoneMilestone;
       'api::nav.nav': ApiNavNav;

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_industries",
+  "info": {
+    "displayName": "industry"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

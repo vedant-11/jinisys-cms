@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "client_datas",
+  "info": {
+    "singularName": "client-data",
+    "pluralName": "client-datas",
+    "displayName": "ClientData"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clients": {
+      "type": "component",
+      "component": "shared.clients",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "client_pages",
+  "info": {
+    "singularName": "client-page",
+    "pluralName": "client-pages",
+    "displayName": "ClientPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "industryBadge": {
+      "type": "string"
+    },
+    "industryTitle": {
+      "type": "string"
+    },
+    "portfolioBadge": {
+      "type": "string"
+    },
+    "portfolioTitle": {
+      "type": "string"
+    }
+  }
+}

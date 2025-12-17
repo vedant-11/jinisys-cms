@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_phases",
+  "info": {
+    "displayName": "phase"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "component",
+      "component": "shared.activities",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
